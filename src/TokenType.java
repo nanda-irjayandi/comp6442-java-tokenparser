@@ -1,4 +1,6 @@
-// +, -, *, /, (, ), ++, --
+/**
+ * Enumerates the types of tokens used in the expression language.
+ */
 public enum TokenType {
     NUM,
     PLUS, MINUS, MULT, DIV,
