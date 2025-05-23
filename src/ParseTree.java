@@ -64,13 +64,14 @@ public class ParseTree {
      */
     private static void printTree(ParseTree node, String prefix, String childPrefix) {
         System.out.println(prefix + node.value);
-        for (Iterator<ParseTree> it = node.children.iterator(); it.hasNext(); ) {
-            ParseTree next = it.next();
-            if (it.hasNext()) {
-                printTree(next, childPrefix + "├── ", childPrefix + "│   ");
-            } else {
-                printTree(next, childPrefix + "└── ", childPrefix + "    ");
-            }
+
+        List<ParseTree> children = node.children;
+        for (int i = children.size() - 1; i >= 0; i--) {
+            ParseTree child = children.get(i);
+            boolean isLast = (i == 0);
+            String newPrefix = childPrefix + (isLast ? "└── " : "├── ");
+            String newChildPrefix = childPrefix + (isLast ? "    " : "│   ");
+            printTree(child, newPrefix, newChildPrefix);
         }
     }
 

@@ -10,24 +10,11 @@ import static org.junit.Assert.assertEquals;
 public class CalculatorTest {
 
     /**
-     * Utility method to pretty print the parse tree.
-     */
-    private void printTree(ParseTree node, String indent, boolean last) {
-        System.out.print(indent);
-        System.out.print(last ? "└── " : "├── ");
-        System.out.println(node.value);
-
-        for (int i = 0; i < node.children.size(); i++) {
-            printTree(node.children.get(i), indent + (last ? "    " : "│   "), i == node.children.size() - 1);
-        }
-    }
-
-    /**
      * Convenience wrapper to print tree and evaluated result.
      */
     private void printResult(ParseTree tree) {
         System.out.println("Parse Tree:");
-        printTree(tree, "", true);
+        ParseTree.printTree(tree);
         System.out.println("Evaluation Result: " + Calculator.evaluate(tree));
     }
 
