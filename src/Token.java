@@ -1,14 +1,5 @@
 public class Token {
 
-    // +, -, *, /, (, ), ++, --
-    public enum TokenType {
-        INT,
-        PLUS, MINUS, MULT, DIV,
-        LPAR, RPAR,
-        INC, DEC,
-        EOF
-    }
-
     final TokenType type;
     final String value;
 
