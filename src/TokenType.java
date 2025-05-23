@@ -1,8 +1,8 @@
 // +, -, *, /, (, ), ++, --
 public enum TokenType {
-    INT,
+    NUM,
     PLUS, MINUS, MULT, DIV,
     LPAR, RPAR,
     INC, DEC,
-    EOF
+    EOF // end of file marker
 }
